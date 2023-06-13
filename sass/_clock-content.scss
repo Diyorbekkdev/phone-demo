@@ -1,0 +1,65 @@
+.clock-content {
+  background: #fff;
+  position: relative;
+  .close-btn{
+    position: absolute;
+    top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    img{
+        filter: invert(1);
+    }
+  }
+  .clock {
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    gap: 15px;
+  }
+  .clock div {
+    margin: 5px;
+    position: relative;
+  }
+  .clock span {
+    width: 50px;
+    height: 50px;
+    opacity: 80%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-family: "Times New Roman", Times, serif;
+    background: rgba(255, 255, 255, 0.43);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+  .clock #ampm {
+    bottom: 0;
+    position: absolute;
+    bottom: 152px;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    background: rgb(138, 147, 234);
+  }
+  .time-sign{
+    position: absolute;
+    bottom: 0;
+  }
+}

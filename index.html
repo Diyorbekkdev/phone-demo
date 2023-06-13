@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone || Diyorbek</title>
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="phone-container">
+          <div class="screen">
+            <div class="content" id="content">
+              <div class="apps">
+                <ul class=row>
+                  <li class="app">
+                    <div class="app-icon setting"></div>
+                    <div class="app-name">Settings</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon calendar"></div>
+                    <div class="app-name">Calendar</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon notes"></div>
+                    <div class="app-name">Notes</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon camera"></div>
+                    <div class="app-name">Camera</div>
+                  </li>
+                </ul>
+                <ul class=row>
+                  <li class="app">
+                    <div class="app-icon mail"></div>
+                    <div class="app-name">Mail</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon clock"  onclick="changeContent()"></div>
+                    <div class="app-name">Clock</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon photos"></div>
+                    <div class="app-name">Photos</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon chrome"></div>
+                    <div class="app-name">Chrome<div>
+                  </li>
+                </ul>
+                <ul class= "row row2">
+                  <li class="app">
+                    <div class="app-icon kril" onclick="changeContent2()"></div>
+                    <div class="app-name">Kril To Latin</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon case" onclick="changeContent3()"></div>
+                    <div class="app-name">Case Converter</div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon alarm" onclick="changeContent4()"></div>
+                    <div class="app-name">Alarm Clock</div>
+                  </li>
+                </ul>
+              </div>
+      
+              <div class="dock">
+                <ul class=row>
+                  <li class="app">
+                    <div class="app-icon message"></div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon phone"></div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon web"></div>
+                  </li>
+                  <li class="app">
+                    <div class="app-icon setting"></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="clock-content">
+              <button class="close-btn" onclick="closeBtn()"><img width="20px" src="assets/img/left-arrow.png" alt=""> Close</button>
+              <div class="clock" >
+                <div class="time-sign">
+                    <span id="ampm">AM</span>
+                </div>
+                <div>
+                    <span id="hour">00</span>
+                </div>
+                <div>
+                    <span id="minutes">00</span>
+                </div>
+                <div>
+                    <span id="seconds">00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="kril-content">
+              <div class="kril-container">
+                <button class="close-btn2" onclick="closeBtn()"><img width="20px" src="assets/img/left-arrow.png" alt=""> Close</button>
+                <h2>Kril to Latin</h2>
+                <div>
+                  <div class="smallLbl">
+                    <div class="wrapper__checkbox">
+                      <input type="checkbox" id="skipUrl" checked>
+                      <label class="label" for="skipUrl">Write as simple text&nbsp;</label>
+                    </div>
+                    <input type="checkbox" id="skipTags">
+                    <label class="label" for="skipTags">Write like HTML(&lt;...&gt;)</label>
+                  </div>
+                  <textarea id="srcText" placeholder="Write something here" cols="80" rows="8"></textarea>
+                </div>
+                <div class="fileInput">
+                    <label  for="file" class="smallLbl label">Or choose a file: </label>
+                    <input type="file" id="file" accept=".srt,text/*" onchange="handleFile(this.files)">
+                  </div>
+                <div>
+                  <button onclick="toCir()" id="encBtn">⯆ Kiril</button>
+                  <button onclick="toLat()" id="encBtn">⯆ Latin</button>
+                  <label id="infoLbl" class="smallLbl"></label>
+                </div>
+                <div>
+                  <textarea id="destText" placeholder="Converted text" cols="80" rows="8"></textarea>
+                </div>
+                <div>
+                  <button onclick="cpy()" id="cpyBtn">Copy</button>
+                  <button onclick="clr()" id="clrBtn">Delete</button>
+                  <label id="msgLbl" class="errLbl"></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="case_converter">
+              <div class="case_container">
+                <button class="close-btn1" onclick="closeBtn()"><img width="20px" src="assets/img/left-arrow.png" alt=""> Close</button>
+                <div class="app">
+                  <div class="flex">
+                    <button id="upper" class="lb">UPPER CASE</button>
+                    <button id="lower">lower case</button>
+                    <button id="sentence">Sentence case</button>
+                    <button id="title" class="rb">Title Case</button>
+                  </div>
+                    <textarea id="text" placeholder="Write something here and click one of the button" rows=12></textarea>
+                </div> 
+              </div>
+            </div>
+
+            <div class="alarm-content">
+              <div class="alarm-container">
+                <button class="close-btn3" onclick="closeBtn2()"><img width="20px" src="assets/img/left-arrow.png" alt=""> Close</button>
+                  <div class="wrapper">
+                    <label>Alarm Time</label>
+                    <input type="time" name="" class="alarm-time" />
+                    <button class="btn-alarm">Set Alarm</button>
+                    <div class="options">
+                        <button class="btn-snooze">Snooze for 5s</button>
+                        <button class="btn-stopalarm">Stop Alarm</button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/kril.js"></script>
+    <script src="js/case-converter.js"></script>
+    <script src="js/alarm-clock.js"></script>
+    <script>
+    
+    </script>
+</body>
+</html>
